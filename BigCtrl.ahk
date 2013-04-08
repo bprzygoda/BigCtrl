@@ -29,7 +29,10 @@
 ;
 ; Author:         Ben Hansen <benhansenslc@gmail.com> 
 
-
+#IfWinActive ahk_class PuTTY ; only in putty
++Capslock::Capslock ; make shift+Caps-Lock the Caps Lock toggle
+Capslock::Alt   ; make Caps Lock the meta button
+	
 #SingleInstance force
 #NoEnv
 SendMode Input
@@ -191,3 +194,4 @@ GetModifiers()
     Modifiers = %Modifiers%+
   Return Modifiers
 }
+#IfWinActive
